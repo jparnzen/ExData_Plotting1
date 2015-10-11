@@ -1,6 +1,8 @@
 ## read the unzipped data if it hasn't already been read before
 source("read_data.R")
 
+## function to plot the layered line graph of the 3 submetering data
+## I re-use this function in plot4, setting plotnum = 4 in that file
 plot_submetering <- function(plotnum = 3) {
     boxtype = "o"
     if (plotnum == 4)
@@ -20,12 +22,15 @@ plot_submetering <- function(plotnum = 3) {
            bty = boxtype)
 }
 
+## function to generate the PNG for the plot function above
 plot3 <- function() {
     png("plot3.png")
         plot_submetering()
     dev.off()
 }
 
+## bit of helper code to execute the plot generator if the file is sourced
+## by itself
 if (!exists("run_plot"))
     run_plot = T
 if (run_plot == T)

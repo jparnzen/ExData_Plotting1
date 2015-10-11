@@ -5,6 +5,8 @@
 ## * store the data in a new environment, so as not to pollute the user's
 ##   current environment or collide with any working variables in their
 ##   current environment.
+## ASSUMES: the project data has been downloaded and unzipped into the same
+##          directory as the plot code files
 ## REQUIRES: data.table
 ## EXPORTS: plotEnv (new environment for data),
 ##          plotEnv$dt (complete data table),
